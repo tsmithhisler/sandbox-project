@@ -33,5 +33,8 @@ endif()
 
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(example example.cpp)
-#target_link_libraries(example gtest_main)
-#add_test(NAME example_test COMMAND example)
+
+enable_testing()
+add_executable(test_library_functions test_library_functions.cpp)
+target_link_libraries(test_library_functions gtest_main)
+add_test(NAME TEST_NAME_REPORTED_IN_COMMAND_LINE COMMAND test_library_functions)
