@@ -1,6 +1,7 @@
 # Build Directory #
 ###################
 build/*
+.vscode/*
 
 # Compiled source #
 ###################

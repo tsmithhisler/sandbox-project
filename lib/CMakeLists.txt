@@ -1,0 +1,7 @@
+file(GLOB files *.cpp)
+foreach(fullfile IN LISTS files)
+    get_filename_component(fullname ${fullfile} NAME)
+    get_filename_component(name ${fullfile} NAME_WE)
+    add_library(${name} ${fullname} )
+    target_include_directories(${name} PUBLIC ${CMAKE_SOURCE_DIR}/include)
+endforeach(fullfile)

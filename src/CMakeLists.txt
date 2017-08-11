@@ -1,0 +1,6 @@
+file(GLOB files *.cpp)
+foreach(fullfile IN LISTS files)
+    get_filename_component(fullname ${fullfile} NAME)
+    get_filename_component(name ${fullfile} NAME_WE)
+    add_executable(${name} ${fullname})
+endforeach(fullfile)

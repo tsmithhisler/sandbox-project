@@ -1,0 +1,4 @@
+enable_testing()
+add_executable(test_library_functions test_library_functions.cpp)
+target_link_libraries(test_library_functions gtest_main example2)
+add_test(NAME mytestname COMMAND test_library_functions)

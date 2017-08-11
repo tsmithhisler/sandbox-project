@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8.2)
+project(My_Test_Project)
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
@@ -31,10 +32,6 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
-# Now simply link against gtest or gtest_main as needed. Eg
-add_executable(example example.cpp)
-
-enable_testing()
-add_executable(test_library_functions test_library_functions.cpp)
-target_link_libraries(test_library_functions gtest_main)
-add_test(NAME TEST_NAME_REPORTED_IN_COMMAND_LINE COMMAND test_library_functions)
+add_subdirectory(lib)
+add_subdirectory(src)
+add_subdirectory(test)

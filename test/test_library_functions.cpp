@@ -3,8 +3,9 @@
 //
 // Don't forget gtest.h, which declares the testing framework.
 
-#include "example.h"
+#include <example2.h>
 #include "gtest/gtest.h"
+#include <stdio.h>
 
 // Step 2. Use the TEST macro to define your tests.
 //
@@ -37,7 +38,8 @@
 TEST(FactorialTest, Negative) {
     // This test is named "Negative", and belongs to the "FactorialTest"
     // test case.
-    EXPECT_EQ(1, 1);
+    std::cout << "The value of sqrt_wrapper(4) is " << sqrt_wrapper(4) << std::endl;
+    EXPECT_EQ(sqrt_wrapper(4), 2);
     
     // <TechnicalDetails>
     //
